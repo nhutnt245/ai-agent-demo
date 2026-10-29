@@ -20,6 +20,6 @@ Note: the exact button and menu names can differ by Codex app version. The Codex
 ## Sample prompts
 
 - Triggers the skill (make a small uncommitted edit first, for example to `README.md`, so there is a diff): `I changed the README to add a setup section. Write me a commit message.`
-- Triggers the MCP server: `Using GitHub, list the 5 most recent open issues in openai/codex.`
+- Triggers the MCP server: `Using GitHub, summarize pull request #1 and list the 5 most recent commits in nhutnt245/ai-agent-demo.`
 
 The full script is in [docs/demo-script.md](docs/demo-script.md). More background: [docs/overview.md](docs/overview.md), [docs/skill-vs-mcp.md](docs/skill-vs-mcp.md).
