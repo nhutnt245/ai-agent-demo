@@ -2,14 +2,14 @@
 
 About 5 minutes, in the Codex desktop app. The repo is https://github.com/nhutnt245/ai-agent-demo.
 
-Note: labels can differ by Codex app version. See [OpenAI's plugin guide](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt) for current plugin guidance.
+Note: labels can differ by Codex app version. This script is path A (GitHub plugin). Path B (hand-configured GitHub MCP server) is at the end.
 
 ## Setup checklist
 
 - [ ] Open the `ai-agent-demo` folder in Codex desktop.
 - [ ] Open Plugins in Codex and choose GitHub. Sign in if it is not already logged in, then click **Try now**. You can also put the GitHub tag in the chat box and run the sample prompts there.
 - [ ] If sign-in lets you choose repository access, authorize **only `ai-agent-demo`**. Do not grant access to any organization.
-- [ ] Type `/skills` to confirm `commit-message` is listed. `/mcp` lists servers configured by hand; the GitHub plugin is a separate integration, so an empty `/mcp` list is normal.
+- [ ] Type `/skills` to confirm `commit-message` is listed. `/mcp` lists only MCP servers configured by hand; the GitHub plugin is separate and does not appear there, so a missing GitHub entry is normal.
 - [ ] Make a small uncommitted edit so there is a diff: `printf '\n## Setup\n\nSee the setup steps above.\n' >> README.md`. Undo it after the demo with `git checkout README.md`.
 
 ## 1. AGENTS.md is read by the agent
@@ -60,9 +60,34 @@ Read pull request #1 in https://github.com/nhutnt245/ai-agent-demo with GitHub, 
 
 ## 5. Wrap up
 
-Say it in one line: `AGENTS.md` told the AI the rules, the skill taught it how, the GitHub plugin gave it access, and the AI chose each on its own.
+Say it in one line: `AGENTS.md` told the AI the rules, the skill taught it how, the GitHub plugin gave it access (path A), and the AI chose each on its own.
 
 ## If something goes wrong
 
-- Open Plugins in Codex and choose GitHub if it needs to be selected or signed in again (see `README.md`). An empty `/mcp` list is normal because it lists manually configured servers, while the GitHub plugin is a separate integration.
+- Open Plugins in Codex and choose GitHub if it needs to be selected or signed in again (see `README.md`). The GitHub plugin does not appear in `/mcp`, which lists only manually configured MCP servers.
 - If the skill is missing, run `/skills`.
+
+## Path B: hand-configured GitHub MCP server (optional)
+
+Use this to show a real MCP server in `/mcp`. It is separate from the GitHub plugin in path A. Docs: [Codex MCP](https://developers.openai.com/codex/mcp), [GitHub MCP server for Codex](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-codex.md).
+
+1. Create a fine-grained personal access token limited to **only** `ai-agent-demo`, with read-only **Contents** and **Pull requests** (metadata read access is automatic).
+2. Export it in your shell as `GITHUB_PAT`. Never put the token in a repo file, config snippet or prompt.
+3. Add the server (endpoint `https://api.githubcopilot.com/mcp/`):
+
+   ```
+   codex mcp add github --url https://api.githubcopilot.com/mcp/ --bearer-token-env-var GITHUB_PAT
+   ```
+
+   Or in `~/.codex/config.toml`, which holds only the variable name, not the token:
+
+   ```toml
+   [mcp_servers.github]
+   url = "https://api.githubcopilot.com/mcp/"
+   bearer_token_env_var = "GITHUB_PAT"
+   ```
+
+4. Run `codex mcp list`, then restart Codex and type `/mcp`. `github` should appear.
+5. Run the prompts from step 3 above, still aimed at https://github.com/nhutnt245/ai-agent-demo.
+
+OAuth note: the GitHub remote server does not support Dynamic Client Registration, so OAuth needs a pre-registered client. Plain `codex mcp login` does not work automatically; use the token above.
