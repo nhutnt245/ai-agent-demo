@@ -11,8 +11,8 @@ See `docs/overview.md`.
 ## Folder map
 
 - `README.md`: setup and sample prompts for humans.
-- `.mcp.json`: config for the GitHub MCP server (remote, uses `GITHUB_PAT`).
-- `.claude/skills/commit-message/`: skill that writes commit messages. Details in `references/conventions.md`.
+- `.codex/config.toml`: Codex config for the GitHub MCP server (remote, token from `GITHUB_PAT`).
+- `.agents/skills/commit-message/`: skill that writes commit messages. Details in `references/conventions.md`.
 - `docs/`: `overview.md`, `skill-vs-mcp.md`, `demo-script.md`.
 
 ## What is allowed

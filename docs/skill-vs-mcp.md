@@ -16,7 +16,7 @@ Think of a skill as a recipe, and an MCP server as a kitchen appliance.
 | Needs a token? | No | Often (here: `GITHUB_PAT`) |
 | Talks to a network service? | No | Yes |
 | Example here | `commit-message` | GitHub MCP server |
-| Configured in | `.claude/skills/` | `.mcp.json` |
+| Configured in | `.agents/skills/` | `.codex/config.toml` |
 
 ## When to use which
 

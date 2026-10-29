@@ -7,11 +7,11 @@ It has no application code and no dependencies.
 
 ## The idea
 
-The AI tool (Claude Code) is the agent. It reads `AGENTS.md`, decides what to do from your prompt, and calls tools on its own.
+The AI tool (OpenAI Codex) is the agent. It reads `AGENTS.md`, decides what to do from your prompt, and calls tools on its own.
 This repo gives it two things to use:
 
-- a **skill** (`.claude/skills/commit-message/`): instructions for writing commit messages;
-- an **MCP server** (GitHub, set up in `.mcp.json`): a way to read data from GitHub.
+- a **skill** (`.agents/skills/commit-message/`): instructions for writing commit messages;
+- an **MCP server** (GitHub, set up in `.codex/config.toml`): a way to read data from GitHub.
 
 ## Purpose of the demo
 
