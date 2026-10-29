@@ -8,7 +8,13 @@ Show `AGENTS.md`, `.mcp.json` and `.claude/skills/commit-message/SKILL.md`. Poin
 
 ## 1. Skill prompt
 
-Type:
+First make a small uncommitted edit so there is a diff to summarize. In another terminal:
+
+```bash
+printf '\n## Setup\n\nSee the setup steps above.\n' >> README.md
+```
+
+Undo it after the demo with `git checkout README.md`. Then type:
 
 ```
 I changed the README to add a setup section. Write me a commit message.
