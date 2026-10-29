@@ -15,8 +15,8 @@ Think of a skill as a recipe, and an MCP server as a kitchen appliance.
 | Gives the AI | Know-how and conventions | Access to data and actions |
 | Needs sign-in? | No | Often (here: OAuth sign-in to GitHub) |
 | Talks to a network service? | No | Yes |
-| Example here | `commit-message` | GitHub MCP server |
-| Configured in | `.agents/skills/` | The Codex UI (MCP servers) |
+| Example here | `commit-message` | GitHub plugin integration |
+| Configured in | `.agents/skills/` | Plugins in Codex |
 
 ## When to use which
 
