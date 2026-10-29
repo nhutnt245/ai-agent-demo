@@ -13,10 +13,10 @@ Think of a skill as a recipe, and an MCP server as a kitchen appliance.
 | --- | --- | --- |
 | What it is | Markdown instructions | A running server with tools |
 | Gives the AI | Know-how and conventions | Access to data and actions |
-| Needs a token? | No | Often (here: `GITHUB_PAT`) |
+| Needs sign-in? | No | Often (here: OAuth sign-in to GitHub) |
 | Talks to a network service? | No | Yes |
 | Example here | `commit-message` | GitHub MCP server |
-| Configured in | `.agents/skills/` | `.codex/config.toml` |
+| Configured in | `.agents/skills/` | The Codex UI (MCP servers) |
 
 ## When to use which
 

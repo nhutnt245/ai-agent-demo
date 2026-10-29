@@ -1,10 +1,10 @@
 # Demo script
 
-About 5 minutes. Before you start, finish the setup in `README.md` (token set, `codex` running in the repo root, project trusted).
+About 5 minutes. Before you start, finish the setup in `README.md` (Codex open on this repo, GitHub connected in the Codex UI).
 
 ## 0. Show the setup (30 seconds)
 
-Show `AGENTS.md`, `.codex/config.toml` and `.agents/skills/commit-message/SKILL.md`. Point out that there is no agent code.
+Show `AGENTS.md`, `.agents/skills/commit-message/SKILL.md`. Say that GitHub is connected in the Codex UI, with no token in the repo. Point out that there is no agent code.
 
 ## 1. Skill prompt
 
@@ -51,5 +51,5 @@ Say it in one line: the skill taught the AI how, the MCP server gave it access, 
 
 ## If something goes wrong
 
-- Run `/mcp` in Codex (or `codex mcp list`). If `github` is missing, check the project is trusted and `echo $GITHUB_PAT` is set, then restart `codex`. If the skill is missing, run `/skills`.
-- Never paste the token on screen.
+- Type `/mcp` in the Codex composer to see connected servers. If GitHub is missing or needs sign-in, connect it again (see `README.md`).
+- If the skill is missing, run `/skills`.

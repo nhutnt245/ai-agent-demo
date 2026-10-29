@@ -11,7 +11,7 @@ See `docs/overview.md`.
 ## Folder map
 
 - `README.md`: setup and sample prompts for humans.
-- `.codex/config.toml`: Codex config for the GitHub MCP server (remote, token from `GITHUB_PAT`).
+- The GitHub MCP server is connected in the Codex UI (OAuth sign-in), not by a file in this repo. See `README.md`.
 - `.agents/skills/commit-message/`: skill that writes commit messages. Details in `references/conventions.md`.
 - `docs/`: `overview.md`, `skill-vs-mcp.md`, `demo-script.md`.
 
@@ -31,8 +31,8 @@ Ask the user before you:
 
 ## Secrets
 
-Never commit secrets. The GitHub token lives only in the `GITHUB_PAT` environment variable.
-Do not write it into any file, prompt or commit message.
+Never commit secrets. This demo uses no token: GitHub is connected by OAuth in the Codex UI.
+Do not write any credential into a file, prompt or commit message.
 
 ## Maintaining this file
 

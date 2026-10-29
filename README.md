@@ -8,25 +8,14 @@ The AI then uses a **skill** and an **MCP server** by itself. There is no custom
 
 ## Setup (5 minutes)
 
-1. Install [Codex](https://developers.openai.com/codex) (CLI) and clone this repo.
-2. Create a GitHub personal access token (GitHub > Settings > Developer settings). Read-only access to the repos you want to query is enough.
-3. Set the token in your shell. Never put it in a file in this repo:
+1. Install [Codex](https://developers.openai.com/codex) and open this repo in it.
+2. In the Codex UI, connect the GitHub MCP server and sign in with OAuth. Codex docs: [MCP](https://developers.openai.com/codex/mcp).
+3. On the GitHub authorization screen, authorize **only the `ai-agent-demo` repo**. Do not grant access to any organization.
+4. Type `/mcp` in the Codex composer to check that GitHub is connected. Type `/skills` to check the skill.
 
-   ```bash
-   export GITHUB_PAT="your_token_here"
-   ```
+No personal access token is used, and nothing secret is stored in this repo.
 
-4. Start Codex from the repo root, in the same shell, and trust the project when asked (Codex only loads project config from trusted projects):
-
-   ```bash
-   codex
-   ```
-
-5. Check the server with `/mcp` inside Codex, or `codex mcp list`. Check the skill with `/skills`.
-
-`.codex/config.toml` sets `bearer_token_env_var = "GITHUB_PAT"`, so Codex reads the token from your shell and the secret stays out of git.
-
-If your Codex does not pick up the project config, copy the `[mcp_servers.github]` block from `.codex/config.toml` into `~/.codex/config.toml`.
+Note: the exact button and menu names can differ by Codex app version. The Codex docs describe adding an MCP server under **Settings > MCP servers** and selecting **Authenticate** when it asks for OAuth sign-in. Follow the docs for your version.
 
 ## Sample prompts
 

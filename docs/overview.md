@@ -11,7 +11,7 @@ The AI tool (OpenAI Codex) is the agent. It reads `AGENTS.md`, decides what to d
 This repo gives it two things to use:
 
 - a **skill** (`.agents/skills/commit-message/`): instructions for writing commit messages;
-- an **MCP server** (GitHub, set up in `.codex/config.toml`): a way to read data from GitHub.
+- an **MCP server** (GitHub, connected in the Codex UI): a way to read data from GitHub.
 
 ## Purpose of the demo
 
